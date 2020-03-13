@@ -6,3 +6,13 @@ Also, this is great because if you change something in your dispatch rules, you 
 Finally, in this post we’ll learn how to work with cut-off times (hour of the day) and current day of the week (pure PHP), so that we can show a “dynamic” notice based on current date. So, let’s see how it’s done!
 
 <img src="https://businessbloomer.com/wp-content/uploads/2020/03/woocommerce-dispatch-orderby-shipping-estimate-date-1024x501.png">
+
+
+Case scenario:
+
+Friday/Saturday/Sunday orders ship on Monday
+For other days, if before 4PM ships today…
+…if after 4PM ships tomorrow
+Please note the “date(‘N’)” and the “date(‘H’)” functions, which in PHP they respectively give me the current day of the week and current hour of the day so I can compare them with local & current time. Also look into “date_default_timezone_set()” function in case you want to set a different timezone, which is vital for this snippet’s calculations.
+
+
